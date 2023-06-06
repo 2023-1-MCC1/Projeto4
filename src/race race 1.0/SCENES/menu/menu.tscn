@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://barap5k6d3mba"]
+
+[ext_resource type="Texture2D" uid="uid://by1d8hqup43bh" path="res://Starter Tiles Platformer/Background.jpg" id="1_i8nyy"]
+[ext_resource type="FontFile" uid="uid://b2ixqt1mpcjut" path="res://FONTS/04B_03__.TTF" id="2_7nyde"]
+[ext_resource type="Script" path="res://SCRIPTS/CREDITOS.cs" id="3_k0saq"]
+[ext_resource type="Script" path="res://SCRIPTS/INICIAR.cs" id="3_wffww"]
+
+[node name="Menu" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(581.5, 323.5)
+scale = Vector2(0.599479, 0.591667)
+texture = ExtResource("1_i8nyy")
+
+[node name="CREDITOS" type="Button" parent="Background"]
+offset_left = -121.0
+offset_top = 172.0
+offset_right = 159.0
+offset_bottom = 250.0
+theme_override_fonts/font = ExtResource("2_7nyde")
+theme_override_font_sizes/font_size = 55
+text = "CREDITOS"
+script = ExtResource("3_k0saq")
+
+[node name="INICIAR" type="Button" parent="Background"]
+offset_left = -120.938
+offset_top = 61.6902
+offset_right = 156.062
+offset_bottom = 155.69
+theme_override_fonts/font = ExtResource("2_7nyde")
+theme_override_font_sizes/font_size = 60
+text = "INICIAR"
+script = ExtResource("3_wffww")
+
+[node name="SAIR" type="Button" parent="Background"]
+offset_left = -56.0
+offset_top = 258.0
+offset_right = 101.0
+offset_bottom = 326.0
+theme_override_fonts/font = ExtResource("2_7nyde")
+theme_override_font_sizes/font_size = 35
+text = "SAIR"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 403.0
+offset_top = 287.0
+offset_right = 792.0
+offset_bottom = 348.0
+theme_override_fonts/font = ExtResource("2_7nyde")
+theme_override_font_sizes/font_size = 60
+text = "RACE RACE 1.0"
+
+[connection signal="pressed" from="Background/CREDITOS" to="Background/CREDITOS" method="_on_pressed"]
+[connection signal="pressed" from="Background/INICIAR" to="Background/INICIAR" method="_on_pressed"]

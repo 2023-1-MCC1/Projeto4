@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkgvdlp087ma7"]
+
+[ext_resource type="FontFile" uid="uid://b2ixqt1mpcjut" path="res://FONTS/04B_03__.TTF" id="1_04u4f"]
+[ext_resource type="Texture2D" uid="uid://bngpnl058p4pe" path="res://ASSETS/RACIST.png" id="2_1lib5"]
+[ext_resource type="PackedScene" path="res://SCENES/restart.tscn" id="3_46jv4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttgop"]
+atlas = ExtResource("2_1lib5")
+region = Rect2(0, 0, 50, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jxip"]
+atlas = ExtResource("2_1lib5")
+region = Rect2(50, 0, 50, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6y28"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttgop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jxip")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CENA GAME OVER RACIST" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1154.0
+offset_bottom = 645.0
+color = Color(0.192157, 0.192157, 0.192157, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 354.0
+offset_top = 131.0
+offset_right = 812.0
+offset_bottom = 220.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_04u4f")
+theme_override_font_sizes/font_size = 85
+text = "GAME OVER"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect"]
+position = Vector2(816, 255)
+scale = Vector2(4.43, 4.07)
+sprite_frames = SubResource("SpriteFrames_v6y28")
+autoplay = "default"
+frame_progress = 0.734007
+
+[node name="Label" type="Label" parent="."]
+offset_left = 383.0
+offset_top = 248.0
+offset_right = 793.0
+offset_bottom = 377.0
+theme_override_fonts/font = ExtResource("1_04u4f")
+theme_override_font_sizes/font_size = 40
+text = "VOCE FOI ESPANCADO
+ POR UM RACISTA
+--------------------
+"
+
+[node name="RESTART" parent="." instance=ExtResource("3_46jv4")]
+offset_left = 437.0
+offset_top = 388.0
+offset_right = 706.0
+offset_bottom = 504.0

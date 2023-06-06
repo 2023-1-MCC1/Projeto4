@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://8cg738vssso4"]
+
+[ext_resource type="FontFile" uid="uid://b2ixqt1mpcjut" path="res://FONTS/04B_03__.TTF" id="1_afpl4"]
+[ext_resource type="Script" path="res://SCRIPTS/retornaraomenu.cs" id="2_5c11s"]
+
+[node name="Button" type="Button"]
+offset_left = 452.0
+offset_top = 478.0
+offset_right = 666.0
+offset_bottom = 542.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_afpl4")
+theme_override_font_sizes/font_size = 21
+text = "RETORNAR AO MENU"
+script = ExtResource("2_5c11s")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://SCRIPTS/fallzone.cs" id="1_nxk13"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_expc1"]
+size = Vector2(154, 15)
+
+[node name="fall zone" type="Area2D"]
+position = Vector2(731, 649)
+script = ExtResource("1_nxk13")
+metadata/_edit_group_ = true
+
+[node name="fall" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_expc1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

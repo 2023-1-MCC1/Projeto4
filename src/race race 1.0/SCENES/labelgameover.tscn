@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtdnu3cfc4nwo"]
+
+[ext_resource type="FontFile" uid="uid://b2ixqt1mpcjut" path="res://FONTS/04B_03__.TTF" id="1_ptdnj"]
+
+[node name="Label" type="Label"]
+offset_left = 328.0
+offset_top = 134.0
+offset_right = 829.0
+offset_bottom = 223.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ptdnj")
+theme_override_font_sizes/font_size = 85
+text = "GAME OVER "

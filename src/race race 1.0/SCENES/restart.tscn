@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="FontFile" uid="uid://b2ixqt1mpcjut" path="res://FONTS/04B_03__.TTF" id="1_nofgh"]
+[ext_resource type="Script" path="res://SCRIPTS/RESTART.cs" id="2_bqfp5"]
+
+[node name="RESTART" type="Button"]
+offset_left = 429.0
+offset_top = 440.0
+offset_right = 698.0
+offset_bottom = 505.0
+theme_override_fonts/font = ExtResource("1_nofgh")
+theme_override_font_sizes/font_size = 35
+text = "________
+REINICIAR
+----------"
+script = ExtResource("2_bqfp5")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,106 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd6h2uyjxyqjm"]
+
+[ext_resource type="Texture2D" uid="uid://by1d8hqup43bh" path="res://Starter Tiles Platformer/Background.jpg" id="1_riu2h"]
+[ext_resource type="FontFile" uid="uid://b2ixqt1mpcjut" path="res://FONTS/04B_03__.TTF" id="2_5364m"]
+[ext_resource type="Script" path="res://SCRIPTS/continuar.cs" id="3_1xvy1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576.5, 324)
+scale = Vector2(0.599479, 0.598148)
+texture = ExtResource("1_riu2h")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+offset_left = -139.0
+offset_top = -230.0
+offset_right = 198.0
+offset_bottom = 400.0
+color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[node name="Label" type="Label" parent="Background"]
+offset_left = -51.7565
+offset_top = -212.173
+offset_right = 102.243
+offset_bottom = -120.173
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_5364m")
+theme_override_font_sizes/font_size = 27
+text = "INSTRUCOES "
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 495.0
+offset_top = 213.0
+offset_right = 684.0
+offset_bottom = 214.0
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 494.0
+offset_top = 482.0
+offset_right = 683.0
+offset_bottom = 483.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 495.0
+offset_top = 214.0
+offset_right = 696.0
+offset_bottom = 252.0
+theme_override_fonts/font = ExtResource("2_5364m")
+theme_override_font_sizes/font_size = 15
+text = "* GANHE A CORRIDA 
+CONTRA O TEMPO "
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 496.0
+offset_top = 255.0
+offset_right = 696.0
+offset_bottom = 293.0
+theme_override_fonts/font = ExtResource("2_5364m")
+theme_override_font_sizes/font_size = 15
+text = "*CHEGUE EM CASA ANTES
+DO TEMPO ACABAR"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 494.0
+offset_top = 296.0
+offset_right = 684.0
+offset_bottom = 334.0
+theme_override_fonts/font = ExtResource("2_5364m")
+theme_override_font_sizes/font_size = 16
+text = "* VOCE POSSUI
+ DESVANTAGENS"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 495.0
+offset_top = 341.0
+offset_right = 685.0
+offset_bottom = 398.0
+theme_override_fonts/font = ExtResource("2_5364m")
+text = "* USE AS SETAS DO TECLA
+DO PARA INTERAGIR
+COM O PERSONAGEM"
+
+[node name="continuar" type="Button" parent="."]
+offset_left = 527.0
+offset_top = 507.0
+offset_right = 645.0
+offset_bottom = 537.0
+theme_override_fonts/font = ExtResource("2_5364m")
+text = "CONTINUAR"
+script = ExtResource("3_1xvy1")
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 494.0
+offset_top = 412.0
+offset_right = 723.0
+offset_bottom = 469.0
+theme_override_fonts/font = ExtResource("2_5364m")
+theme_override_font_sizes/font_size = 16
+text = "* VOCE POSSUI APENAS
+7 SEGUNDOS 
+PARA PASSAR CADA FASE "
+
+[connection signal="pressed" from="continuar" to="continuar" method="_on_pressed"]

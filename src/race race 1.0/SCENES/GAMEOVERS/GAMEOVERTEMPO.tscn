@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://ginh7skdl48f"]
+
+[ext_resource type="PackedScene" uid="uid://dtdnu3cfc4nwo" path="res://SCENES/labelgameover.tscn" id="1_u006y"]
+[ext_resource type="FontFile" uid="uid://b2ixqt1mpcjut" path="res://FONTS/04B_03__.TTF" id="1_x2v31"]
+[ext_resource type="PackedScene" path="res://SCENES/restart.tscn" id="2_14dew"]
+
+[node name="GAME OVERT" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1151.0
+offset_bottom = 650.0
+color = Color(0.192157, 0.192157, 0.192157, 1)
+
+[node name="Label" parent="ColorRect" instance=ExtResource("1_u006y")]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 174.0
+offset_right = 837.0
+offset_bottom = 263.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 363.0
+offset_top = 265.0
+offset_right = 783.0
+offset_bottom = 351.0
+theme_override_fonts/font = ExtResource("1_x2v31")
+theme_override_font_sizes/font_size = 40
+text = "O SEU TEMPO ACABOU
+---------------------"
+
+[node name="RESTART" parent="." instance=ExtResource("2_14dew")]
+offset_left = 432.0
+offset_top = 349.0
+offset_right = 701.0
+offset_bottom = 465.0
