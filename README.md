@@ -10,7 +10,7 @@
 
 ## Integrantes:<a> Giovanni Pellazza </a>, <a href=https://github.com/Bubi1996-del>Pedro Henrique Dangelo Reis </a>, <a> Matheus Faim </a>
 
-## Professores Orientadores: 
+## Professores Orientadores: <p> Eduardo Savino, Renata Muniz Do Nascimento, Victor Bruno Alexander Rosetti de Quiroz, Fabiano Alves Onça, Jefferson de Oliveira Silva </p>
 
 ## Descrição
 
