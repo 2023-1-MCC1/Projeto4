@@ -8,9 +8,9 @@
 
 ## Nome do Grupo <p>  INIMIGOS DO PULMÃO </p>
 
-## Integrantes: <a href="https://www.linkedin.com/in/victorbarq/">Goku Sayajin</a>, <a href="https://www.linkedin.com/in/victorbarq/">Saitama One</a>, <a href="https://www.linkedin.com/in/victorbarq/">Ikki de Fenix</a>, <a href="https://www.linkedin.com/in/victorbarq/">Yusuke Urameshi</a>, <a href="https://www.linkedin.com/in/victorbarq/">Roronoa Zoro</a>
+## Integrantes:<a> Giovanni Pellazza </a>, <a href=https://github.com/Bubi1996-del>Pedro Henrique Dangelo Reis </a>, <a> Matheus Faim </a>
 
-## Professores Orientadores: <a> Giovanni Pellazza </a>, <a href=https://github.com/Bubi1996-del>Pedro Henrique Dangelo Reis </a>, <a> Matheus Faim </a>
+## Professores Orientadores: 
 
 ## Descrição
 
