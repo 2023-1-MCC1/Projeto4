@@ -1,10 +1,12 @@
-[gd_scene load_steps=24 format=3 uid="uid://c36b12gvper6v"]
+[gd_scene load_steps=27 format=3 uid="uid://c36b12gvper6v"]
 
 [ext_resource type="Texture2D" uid="uid://by1d8hqup43bh" path="res://Starter Tiles Platformer/Background.jpg" id="1_4fbcw"]
+[ext_resource type="Script" path="res://SCRIPTS/fase_2_soudntrack.cs" id="1_piakv"]
 [ext_resource type="PackedScene" uid="uid://b7f8cus4dn8n4" path="res://SCENES/tile_map.tscn" id="2_tx4vw"]
-[ext_resource type="PackedScene" path="res://SCENES/character_body_2d.tscn" id="3_jqunx"]
+[ext_resource type="PackedScene" uid="uid://lwg6sahosdhl" path="res://SCENES/character_body_2d.tscn" id="3_jqunx"]
 [ext_resource type="PackedScene" uid="uid://bg3hsfjw6ameu" path="res://SCENES/racist.tscn" id="4_h1pjy"]
 [ext_resource type="Script" path="res://SCRIPTS/RACIST.cs" id="4_t7wmg"]
+[ext_resource type="PackedScene" uid="uid://bpm685h2vbnjr" path="res://audio_stream_player_2d.tscn" id="4_tic42"]
 [ext_resource type="PackedScene" path="res://SCENES/fall_zone.tscn" id="4_wwgx5"]
 [ext_resource type="Texture2D" uid="uid://bngpnl058p4pe" path="res://ASSETS/RACIST.png" id="5_eyokb"]
 [ext_resource type="Texture2D" uid="uid://b2ngvfr51jr2g" path="res://ASSETS/flag animation.png" id="7_ei3hg"]
@@ -12,6 +14,7 @@
 [ext_resource type="FontFile" uid="uid://b2ixqt1mpcjut" path="res://FONTS/04B_03__.TTF" id="8_hgk5h"]
 [ext_resource type="PackedScene" uid="uid://b1vvij5xre4mn" path="res://SCENES/timer.tscn" id="10_kavt4"]
 [ext_resource type="PackedScene" uid="uid://75jxon4i1ygt" path="res://SCENES/anothers reasons/carpolice.tscn" id="12_uj2nx"]
+[ext_resource type="AudioStream" uid="uid://wwgj86ce2jri" path="res://sounds/soundtrack2.wav" id="15_8sr3w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mfog"]
 size = Vector2(22, 39)
@@ -85,6 +88,7 @@ animations = [{
 }]
 
 [node name="fase2" type="Node2D"]
+script = ExtResource("1_piakv")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(576, 325)
@@ -98,6 +102,8 @@ layer_0/tile_data = PackedInt32Array(2555898, 65541, 2, 2555897, 65541, 2, 25558
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_jqunx")]
 position = Vector2(-4, -161)
+
+[node name="AudioStreamPlayer2D" parent="CharacterBody2D" instance=ExtResource("4_tic42")]
 
 [node name="RACIST" parent="." instance=ExtResource("4_h1pjy")]
 position = Vector2(830, 559)
@@ -187,7 +193,13 @@ wait_time = 7.0
 [node name="carpolice" parent="." instance=ExtResource("12_uj2nx")]
 position = Vector2(-161, 187)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_8sr3w")
+volume_db = -45.979
+autoplay = true
+
 [connection signal="body_entered" from="RACIST2" to="RACIST2" method="_on_body_entered"]
 [connection signal="body_entered" from="RACIST3" to="RACIST3" method="_on_body_entered"]
 [connection signal="body_entered" from="RACIST4" to="RACIST4" method="_on_body_entered"]
 [connection signal="body_entered" from="chegada 2" to="chegada 2" method="_on_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

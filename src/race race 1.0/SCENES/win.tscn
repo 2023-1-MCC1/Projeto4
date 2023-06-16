@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://ly4uck45d4cg"]
+[gd_scene load_steps=6 format=3 uid="uid://ly4uck45d4cg"]
 
+[ext_resource type="Script" path="res://SCRIPTS/win_audio.cs" id="1_h88ui"]
 [ext_resource type="FontFile" uid="uid://b2ixqt1mpcjut" path="res://FONTS/04B_03__.TTF" id="1_xfkq4"]
 [ext_resource type="PackedScene" uid="uid://8cg738vssso4" path="res://SCENES/anothers reasons/return.tscn" id="2_ambbm"]
 [ext_resource type="Texture2D" uid="uid://cfw5u1ipy3bv6" path="res://ASSETS/trophy.png" id="3_uooi5"]
+[ext_resource type="AudioStream" uid="uid://bgo1l87rjh25t" path="res://sounds/win.wav" id="5_shjem"]
 
 [node name="win" type="Node2D"]
+script = ExtResource("1_h88ui")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1155.0
@@ -24,6 +27,7 @@ text = "VOCE CONSEGUI CHEGAR A SUA CASA A TEMPO"
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="ColorRect/Label"]
+layout_mode = 0
 offset_left = 428.0
 offset_top = 76.0
 offset_right = 764.0
@@ -39,3 +43,10 @@ text = "PARABENS "
 position = Vector2(557, 332)
 scale = Vector2(0.296875, 0.324219)
 texture = ExtResource("3_uooi5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_shjem")
+volume_db = -5.474
+autoplay = true
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://barap5k6d3mba"]
+[gd_scene load_steps=8 format=3 uid="uid://barap5k6d3mba"]
 
 [ext_resource type="Texture2D" uid="uid://by1d8hqup43bh" path="res://Starter Tiles Platformer/Background.jpg" id="1_i8nyy"]
+[ext_resource type="Script" path="res://SCENES/menu/menusound.cs" id="1_kvrqy"]
 [ext_resource type="FontFile" uid="uid://b2ixqt1mpcjut" path="res://FONTS/04B_03__.TTF" id="2_7nyde"]
 [ext_resource type="Script" path="res://SCRIPTS/CREDITOS.cs" id="3_k0saq"]
 [ext_resource type="Script" path="res://SCRIPTS/INICIAR.cs" id="3_wffww"]
+[ext_resource type="Script" path="res://SCRIPTS/SAIR.cs" id="5_d8nrc"]
+[ext_resource type="AudioStream" uid="uid://ct28qnrdw0aht" path="res://sounds/soundtrack.wav" id="7_24tuu"]
 
 [node name="Menu" type="Node2D"]
+script = ExtResource("1_kvrqy")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(581.5, 323.5)
@@ -40,6 +44,7 @@ offset_bottom = 326.0
 theme_override_fonts/font = ExtResource("2_7nyde")
 theme_override_font_sizes/font_size = 35
 text = "SAIR"
+script = ExtResource("5_d8nrc")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 403.0
@@ -50,5 +55,12 @@ theme_override_fonts/font = ExtResource("2_7nyde")
 theme_override_font_sizes/font_size = 60
 text = "RACE RACE 1.0"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_24tuu")
+volume_db = -45.979
+autoplay = true
+
 [connection signal="pressed" from="Background/CREDITOS" to="Background/CREDITOS" method="_on_pressed"]
 [connection signal="pressed" from="Background/INICIAR" to="Background/INICIAR" method="_on_pressed"]
+[connection signal="pressed" from="Background/SAIR" to="Background/SAIR" method="_on_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

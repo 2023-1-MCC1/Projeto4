@@ -1,5 +1,6 @@
-[gd_scene load_steps=47 format=3 uid="uid://bcg2pr3andnyr"]
+[gd_scene load_steps=50 format=3 uid="uid://bcg2pr3andnyr"]
 
+[ext_resource type="Script" path="res://SCRIPTS/CENAINICIALsound.cs" id="1_ieqty"]
 [ext_resource type="Texture2D" uid="uid://by1d8hqup43bh" path="res://Starter Tiles Platformer/Background.jpg" id="1_mnwlh"]
 [ext_resource type="Texture2D" uid="uid://bo32a8076td4m" path="res://ASSETS/RowHouseTileSet.png" id="2_c2540"]
 [ext_resource type="Texture2D" uid="uid://cbwrtmsvxi4ed" path="res://Starter Tiles Platformer/Swampset.png" id="2_n7myb"]
@@ -11,12 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://dum70wni735u7" path="res://ASSETS/pulando preto.png" id="8_2bxmr"]
 [ext_resource type="Texture2D" uid="uid://bl5o8irvvfoe5" path="res://ASSETS/parado preto.png" id="9_7wevk"]
 [ext_resource type="Script" path="res://SCRIPTS/fallzone.cs" id="10_auvjh"]
+[ext_resource type="PackedScene" uid="uid://bpm685h2vbnjr" path="res://audio_stream_player_2d.tscn" id="11_43hao"]
 [ext_resource type="Texture2D" uid="uid://b2ngvfr51jr2g" path="res://ASSETS/flag animation.png" id="11_drlea"]
 [ext_resource type="Script" path="res://SCRIPTS/chegadas/Area2D.cs" id="12_ayxmy"]
 [ext_resource type="PackedScene" uid="uid://b1vvij5xre4mn" path="res://SCENES/timer.tscn" id="13_catqu"]
 [ext_resource type="PackedScene" uid="uid://bg3hsfjw6ameu" path="res://SCENES/racist.tscn" id="15_wby5s"]
 [ext_resource type="PackedScene" uid="uid://75jxon4i1ygt" path="res://SCENES/anothers reasons/carpolice.tscn" id="16_dhf1v"]
 [ext_resource type="FontFile" uid="uid://b2ixqt1mpcjut" path="res://FONTS/04B_03__.TTF" id="17_ml7py"]
+[ext_resource type="AudioStream" uid="uid://c5aewfary3icq" path="res://sounds/soundtrackgame.wav" id="20_qcs5k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3iqtn"]
 texture = ExtResource("2_c2540")
@@ -2914,6 +2917,7 @@ animations = [{
 size = Vector2(38, 80)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_ieqty")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(578, 323.5)
@@ -2943,6 +2947,10 @@ autoplay = "parado"
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(163, 548)
 zoom = Vector2(1.5, 1.5)
+
+[node name="AudioStreamPlayer2D" parent="CharacterBody2D" instance=ExtResource("11_43hao")]
+volume_db = -4.379
+pitch_scale = 0.92
 
 [node name="fall zone" type="Area2D" parent="."]
 position = Vector2(731, 649)
@@ -2983,5 +2991,11 @@ theme_override_fonts/font = ExtResource("17_ml7py")
 theme_override_font_sizes/font_size = 35
 text = "FASE 1"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_qcs5k")
+volume_db = -45.979
+autoplay = true
+
 [connection signal="body_entered" from="fall zone" to="fall zone" method="_on_body_entered"]
 [connection signal="body_entered" from="chegada1" to="chegada1" method="_on_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

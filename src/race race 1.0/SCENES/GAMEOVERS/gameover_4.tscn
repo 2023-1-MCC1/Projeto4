@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://imwpvonf7l72"]
+[gd_scene load_steps=9 format=3 uid="uid://imwpvonf7l72"]
 
+[ext_resource type="Script" path="res://SCRIPTS/gameover_4sound.cs" id="1_chu32"]
 [ext_resource type="PackedScene" uid="uid://dtdnu3cfc4nwo" path="res://SCENES/labelgameover.tscn" id="1_etrou"]
 [ext_resource type="Texture2D" uid="uid://d0gddbcaxqtw5" path="res://ASSETS/POLICE CAR.png" id="2_f5sbp"]
 [ext_resource type="FontFile" uid="uid://b2ixqt1mpcjut" path="res://FONTS/04B_03__.TTF" id="3_tgavt"]
 [ext_resource type="PackedScene" path="res://SCENES/restart.tscn" id="4_cfv6f"]
+[ext_resource type="AudioStream" uid="uid://c6xrreuovrvno" path="res://sounds/police.wav" id="6_ecfia"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8kjjg"]
 atlas = ExtResource("2_f5sbp")
@@ -21,6 +23,7 @@ animations = [{
 }]
 
 [node name="Gameover4" type="Node2D"]
+script = ExtResource("1_chu32")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1151.0
@@ -52,3 +55,10 @@ offset_left = 466.0
 offset_top = 397.0
 offset_right = 735.0
 offset_bottom = 513.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ecfia")
+volume_db = -41.6
+autoplay = true
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://cffpjeea60c1b"]
 
+[ext_resource type="Script" path="res://SCRIPTS/GAMEOVERsound.cs" id="1_enaph"]
 [ext_resource type="FontFile" uid="uid://b2ixqt1mpcjut" path="res://FONTS/04B_03__.TTF" id="1_wuam8"]
 [ext_resource type="PackedScene" path="res://SCENES/restart.tscn" id="2_2mgvn"]
+[ext_resource type="AudioStream" uid="uid://vbg5byn0mv1j" path="res://sounds/fall.wav" id="4_1ow36"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_enaph")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 1.0
@@ -34,3 +37,9 @@ text = "VOCE CAIU NO VOID
 -------------------"
 
 [node name="RESTART" parent="." instance=ExtResource("2_2mgvn")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1ow36")
+autoplay = true
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

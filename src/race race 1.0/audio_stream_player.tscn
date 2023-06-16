@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://uojyo5miqcu"]
+
+[ext_resource type="AudioStream" uid="uid://c1b0voido2fiy" path="res://sounds/running.ogg" id="1_3swkb"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_3swkb")
+volume_db = -10.127
+mix_target = 1

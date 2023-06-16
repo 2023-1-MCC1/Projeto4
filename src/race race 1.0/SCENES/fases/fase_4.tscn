@@ -1,20 +1,24 @@
-[gd_scene load_steps=12 format=3 uid="uid://tqk562d2di3n"]
+[gd_scene load_steps=15 format=3 uid="uid://tqk562d2di3n"]
 
+[ext_resource type="Script" path="res://SCRIPTS/fase_4_sound.cs" id="1_eldqk"]
 [ext_resource type="Texture2D" uid="uid://by1d8hqup43bh" path="res://Starter Tiles Platformer/Background.jpg" id="1_mepcm"]
 [ext_resource type="PackedScene" uid="uid://b7f8cus4dn8n4" path="res://SCENES/tile_map.tscn" id="2_7ns48"]
 [ext_resource type="PackedScene" path="res://SCENES/fall_zone.tscn" id="3_ev764"]
-[ext_resource type="PackedScene" path="res://SCENES/character_body_2d.tscn" id="4_cykn0"]
+[ext_resource type="PackedScene" uid="uid://lwg6sahosdhl" path="res://SCENES/character_body_2d.tscn" id="4_cykn0"]
+[ext_resource type="PackedScene" uid="uid://bpm685h2vbnjr" path="res://audio_stream_player_2d.tscn" id="5_4d5w1"]
 [ext_resource type="PackedScene" uid="uid://75jxon4i1ygt" path="res://SCENES/anothers reasons/carpolice.tscn" id="5_8kstp"]
 [ext_resource type="PackedScene" uid="uid://bg3hsfjw6ameu" path="res://SCENES/racist.tscn" id="7_uo85o"]
 [ext_resource type="PackedScene" uid="uid://b1vvij5xre4mn" path="res://SCENES/timer.tscn" id="8_lbb1d"]
 [ext_resource type="FontFile" uid="uid://b2ixqt1mpcjut" path="res://FONTS/04B_03__.TTF" id="9_3f875"]
 [ext_resource type="Texture2D" uid="uid://huquniyh7apn" path="res://ASSETS/HOUSE.png" id="10_vnoc7"]
 [ext_resource type="Script" path="res://SCRIPTS/chegadas/CHEGADA4.cs" id="11_obi05"]
+[ext_resource type="AudioStream" uid="uid://ct28qnrdw0aht" path="res://sounds/soundtrack.wav" id="13_u1ug2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l0bo3"]
 size = Vector2(20, 164)
 
 [node name="fase4" type="Node2D"]
+script = ExtResource("1_eldqk")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(576, 323.5)
@@ -37,6 +41,8 @@ position = Vector2(513, 651)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_cykn0")]
 position = Vector2(-17, -524)
+
+[node name="AudioStreamPlayer2D" parent="CharacterBody2D" instance=ExtResource("5_4d5w1")]
 
 [node name="carpolice" parent="." instance=ExtResource("5_8kstp")]
 
@@ -71,4 +77,10 @@ metadata/_edit_group_ = true
 position = Vector2(0, -72)
 shape = SubResource("RectangleShape2D_l0bo3")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_u1ug2")
+volume_db = -45.979
+autoplay = true
+
 [connection signal="body_entered" from="CHEGADA 3" to="CHEGADA 3" method="_on_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
